@@ -9,7 +9,7 @@ I wonder that myself. I so preoccupied with whether or not I could, I didn’t s
 Reflashing the STM32 on board. The default OS already has the capibility to put the STM32 into DFU mode using a script and uplaod a new firmware file. Even after changing the communication port in the firmware on the STM32, the DFU and firmware upload script still works. With that said, bricking your board is actually not that easy, unless you lose power during the firmware flash which takes maybe two seconds.
 
 ### What do I need?
-- Any Linux system with decent specs that you can install Klipper on. I'd reccomend Raspberry Pi 3 or better. No Zeros boards!
+- Any Linux system with decent specs that you can install Klipper on **(device with GPOI reccomended)**. I'd reccomend Raspberry Pi 3 or better. No Zeros boards!
 - USB to UART adapter if your system doesn't have GPIO or UART.
 - 3 Dupont wires or something similar so you can hook up the UART connection
 - 5 more Dupont wires if you'd like to hook up your acceleroneter via GPIO. If you're using a BTT Pi or something similar with an SPI port you can just plug it right in.
