@@ -1,6 +1,6 @@
 # Introduction
 
-This guide will walk you through flashing the STM32 on board. The default OS already has the capibility to put the STM32 into DFU mode using a script, and upload a new firmware file. Even after changing the communication port in the firmware on the STM32, DFU and firmware upload scripts still works on the stock SOC.
+This guide will walk you through flashing the STM32 on board to control it via UART with a SBC or similar device. The default OS already has the capibility to put the STM32 into DFU mode using a script, and upload a new firmware file. Even after changing the communication port in the firmware on the STM32, DFU and firmware upload scripts still works on the stock SOC.
 
 ### What you will need
 - Any Linux system with decent specs that you can install Klipper on **(device with GPOI reccomended)**. I'd reccomend Raspberry Pi 3 or better. No Zeros boards!
