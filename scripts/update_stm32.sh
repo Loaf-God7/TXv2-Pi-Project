@@ -6,7 +6,7 @@ echo 1 > /sys/class/gpio/gpio228/value
 echo 0 > /sys/class/gpio/gpio142/value
 echo 1 > /sys/class/gpio/gpio142/value
 sleep 0.5
-chroot /server/tmp home/gem/TXv2-Pi-Project/flash_mainboard.sh
+chroot /server/tmp home/gem/TXv2-Pi-Project/scripts/flash_mainboard.sh
 echo 0 > /sys/class/gpio/gpio228/value
 echo 0 > /sys/class/gpio/gpio142/value
 echo 1 > /sys/class/gpio/gpio142/value
