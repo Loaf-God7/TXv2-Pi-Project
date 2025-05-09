@@ -21,9 +21,9 @@ If you just flash the firmware on your V2 board and hook up your Linux device, y
 - `su gem`
 - `cd ~/`
 - `sudo apt-get install git`
-- `git clone LINK`
+- `git clone https://github.com/Loaf-God7/TXv2-Pi-Project.git`
 - `exit` until you leave chroot and are back to being root of the base system
-- `sh /server/tmp/home/gem/REPO/SCRIPT.sh`
+- `sh /server/tmp/home/gem/TXv2-Pi-Project/update_stm32.sh`
 - You should see DFU util start. There may be some errors, but as long as you see the loading bar at 100%, and file upload complete the flash went through.
 - Restart your system completely
 - On the screen of your printer it should say the printer could not connect to the MCU
