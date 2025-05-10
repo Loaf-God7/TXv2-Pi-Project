@@ -3,14 +3,14 @@
 This guide will walk you through flashing the STM32 on board to control it via UART with a SBC or similar device. The default OS already has the capibility to put the STM32 into DFU mode using a script, and upload a new firmware file. Even after changing the communication port in the firmware on the STM32, DFU and firmware upload scripts still works on the stock SOC.
 
 ### What you will need
-- Any Linux system with decent specs that you can install Klipper on **(device with GPOI reccomended)**. I'd reccomend Raspberry Pi 3 or better. No Zeros boards!
+- Any Linux system with decent specs that you can install Klipper on **(device with GPOI recommended)**. I'd recommend Raspberry Pi 3 or better. No Zeros boards!
 - USB to UART adapter if your system doesn't have GPIO or UART.
 - 3 Dupont wires or something similar so you can hook up the UART connection
-- 5 more Dupont wires to hook up your acceleroneter via GPIO. If you device has an spi port you can use that insted of GPIO.
+- 5 more Dupont wires to hook up your accelerometer via GPIO. If you device has an spi port you can use that instead of GPIO.
 - Some time and patience
 
 ### Considerations
-If you just flash the firmware on your V2 board and hook up your Linux device, your screen will not be able to control the printer. The screen will stay on a message saying MCU connection failed. Also, the accellerometere and Z touch sensor reset are wired straight to the SOC on the board. Becuase of that, you will need to wire them up to your device. The Z touch isn't technically needed for the device to work or home/level.
+If you just flash the firmware on your V2 board and hook up your Linux device, your screen will not be able to control the printer. The screen will stay on a message saying MCU connection failed. Also, the accelerometer and Z touch sensor reset are wired straight to the SOC on the board. Because of that, you will need to wire them up to your device. The Z touch isn't technically needed for the device to work and home/level.
 
 # Walkthrough
 
@@ -45,10 +45,10 @@ If you just flash the firmware on your V2 board and hook up your Linux device, y
 ### Reverting to stock firmware
 - SSH into your system
 - `sh sh /server/tmp/update_stm32.sh`
-- This will flash the infimech firmware that was last downloaded on your system.
-- Once the flash compeltes, power off and on the printer. You can now use the printer stock again.
+- This will flash the Infimech firmware that was last downloaded on your system.
+- Once the flash completes, power off and on the printer. You can now use the printer stock again.
 
 ### Troubleshooting
-- If you're having issues with connection in Klipper, check klippy.log. You can also run screen, minicon, or a similar console on the SBC to view the UART signal the baud rate of the custom firmware is 250000. Power cycle the printer while keeping the SBC on and run your console of choise. Power on the pritner. You should see some sort of jubberish come through a few seconds after turning on the printer. The outout is not going to be plain text so do not worry about that.
-- If you're still having trouble, I have included a UART test firmware. You can edit flash_mainboard.sh to use that bin file insted, then flash as mentioned above. That bin file will output "Hello from UART 3" in plain text from the STM32 every second. Connect your SBC via uart and open a console as mentioned above, but use a baudrate of 115200 this time. If you're wired up correctly, you should see the hello message after power cycling the printer.
+- If you're having issues with connection in Klipper, check klippy.log. You can also run screen, minicon, or a similar console on the SBC to view the UART signal the baud rate of the custom firmware is 250000. Power cycle the printer while keeping the SBC on and run your console of choice. Power on the printer. You should see some sort of gibberish come through a few seconds after turning on the printer. The output is not going to be plain text so do not worry about that.
+- If you're still having trouble, I have included a UART test firmware. You can edit flash_mainboard.sh to use that bin file instead, then flash as mentioned above. That bin file will output "Hello from UART 3" in plain text from the STM32 every second. Connect your SBC via UART and open a console as mentioned above, but use a baud rate of 115200 this time. If you're wired up correctly, you should see the hello message after power cycling the printer.
 - Any questions, let me know in Discord.
