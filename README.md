@@ -14,6 +14,7 @@ If you just flash the firmware on your V2 board and hook up your Linux device, y
 
 # Walkthrough
 
+### Flash the custom firmware
 - SSH into your system
   - Username: `root`
   - Password: `zhuochen1`
@@ -27,4 +28,7 @@ If you just flash the firmware on your V2 board and hook up your Linux device, y
 - You should see DFU util start. There may be some errors, but as long as you see the loading bar at 100%, and file upload complete the flash went through.
 - Restart your system completely
 - On the screen of your printer it should say the printer could not connect to the MCU
-- 
+
+### Wire up your SBC via UART
+- Now that the firmware is flashed, the SBC will need to be hooked up to the printer via uart. Whether you're using GPIO or a USB to UART adapter the wiring will be the same.
+- Connect RX, TX and GND to your GPIO/adapter, see the screenshots below. Make sure you wire TX to RX and RX to TX!
